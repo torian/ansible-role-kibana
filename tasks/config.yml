@@ -1,0 +1,14 @@
+---
+#
+# Configuration for Kibana
+#
+
+- name: Kibana configuration
+  template:
+    src=config/kibana.yml.j2
+    dest="{{kibana.install_dir}}/config/kibana.yml"
+    owner='root'
+    group="{{kibana.group}}"
+    mode='0644'
+
+# vi:ts=2:sw=2:et:ft=yaml

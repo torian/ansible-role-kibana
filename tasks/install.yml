@@ -1,0 +1,35 @@
+---
+#
+# Install package and dependencies
+#
+
+- name: Download Package
+  get_url:
+    url="{{kibana.url}}/{{kibana.package}}"
+    dest="{{kibana.download_dir}}/{{kibana.package}}"
+
+- name: Installation directory
+  file:
+    state=directory
+    dest="{{kibana.base_dir}}"
+    owner="{{kibana.owner}}"
+    group="{{kibana.group}}"
+    mode="0750"
+
+- name: Extract package
+  unarchive: 
+    copy=no
+    src="{{kibana.download_dir}}/{{kibana.package}}"
+    dest="{{kibana.base_dir}}"
+    creates="{{kibana.install_dir}}"
+    #owner="{{kibana.owner}}"
+    #group="{{kibana.group}}"
+  sudo_user: "{{kibana.owner}}"
+
+- name: Current Installation
+  file:
+    state=link
+    src="{{kibana.install_dir}}"
+    dest="{{kibana.base_dir}}/current"
+
+# vi:ts=2:sw=2:et:ft=yaml

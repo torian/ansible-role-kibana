@@ -1,0 +1,24 @@
+---
+
+kibana:
+
+  url:     https://download.elasticsearch.org/kibana/kibana
+  os:      "{{kibana_os}}"
+  arch:    "{{kibana_arch}}"
+  version: "{{kibana_version}}"
+  package: "{{kibana_package}}"
+  
+  owner: www-data
+  group: www-data
+  
+  download_dir: "{{kibana_download_dir}}"
+  base_dir:     "{{kibana_base_dir}}"
+  install_dir:  "{{kibana_install_dir}}"
+
+  config:
+    host:        "{{kibana_cfg_host}}"
+    port:        "{{kibana_cfg_port}}"
+    es_url:      "{{kibana_cfg_es_url}}"
+    default_app: "{{kibana_cfg_default_app}}"
+
+# vi:ts=2:sw=2:et:ft=yaml
