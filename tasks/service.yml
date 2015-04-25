@@ -13,4 +13,4 @@
   service:
     name=kibana
     enabled=yes
-    status=started
+    state=started
