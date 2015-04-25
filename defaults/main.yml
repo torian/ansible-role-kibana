@@ -9,6 +9,7 @@ kibana_content: "kibana-{{kibana_version}}-{{kibana_os}}-{{kibana_arch}}"
 kibana_download_dir: /usr/local/src
 kibana_base_dir:     /opt/kibana
 kibana_install_dir:  "{{kibana_base_dir}}/{{kibana_content}}"
+kibana_current_dir:  "{{kibana_base_dir}}/current"
 
 kibana_cfg_host:        127.0.0.1
 kibana_cfg_port:        5601
