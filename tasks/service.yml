@@ -1,0 +1,16 @@
+---
+
+- name: Kibana init script
+  template:
+    src=etc/init.d/kibana.j2
+    dest=/etc/init.d/kibana
+    owner='root'
+    group='root'
+    mode='0755'
+  notify: kibana restart
+
+- name: Enable service
+  service:
+    name=kibana
+    enabled=yes
+    status=started

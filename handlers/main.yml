@@ -1,11 +1,11 @@
 ---
 
-- name: elasticsearch start
-  service: name=elasticsearch state=started
+- name: kibana start
+  service: name=kibana state=started
 
-- name: elasticsearch stop
-  service: name=elasticsearch state=stopped
+- name: kibana stop
+  service: name=kibana state=stopped
 
-- name: elasticsearch restart
-  service: name=elasticsearch state=restarted
+- name: kibana restart
+  service: name=kibana state=restarted
 

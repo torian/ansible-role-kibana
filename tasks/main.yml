@@ -11,4 +11,8 @@
   sudo: yes
   tags: kb_config
 
+- include: service.yml
+  sudo: yes
+  tags: kb_service
+
 # vi:ts=2:sw=2:et:ft=yaml
